@@ -1,0 +1,61 @@
+---
+import './producto.css';
+import Logo from '../../../assets/astro.svg';
+---
+
+<section class="productos">
+	<h2>Nuestros productos</h2>
+
+	<div class="logos-center">
+		<div class="productos-logos">
+			<img src={Logo.src} alt="Logo 1" class="logo" />
+			<img src={Logo.src} alt="Logo 2" class="logo" />
+			<img src={Logo.src} alt="Logo 3" class="logo" />
+		</div>
+	</div>
+</section>
+
+<section class="aliados">
+	<h2>Nuestros aliados</h2>
+
+	<div class="logos-marquee">
+        <div class="marquee marquee-left">
+            <div class="marquee-track">
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+
+                <!-- DUPLICADO -->
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+            </div>
+        </div>
+
+        <div class="marquee marquee-right">
+            <div class="marquee-track">
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+
+                <!-- DUPLICADO -->
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+                <img src={Logo.src} class="logo" />
+            </div>
+        </div>
+    </div>
+
+</section>

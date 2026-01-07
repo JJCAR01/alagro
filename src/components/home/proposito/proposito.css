@@ -1,0 +1,46 @@
+.descripcion {
+	display: flex;
+	flex-direction: column;   /* 👈 clave */
+	align-items: center;      /* centra horizontal */
+	text-align: center;
+
+	padding: 3rem 1.5rem;
+	gap: 1rem;                /* espacio entre h1, p y botón */
+
+	margin: 0 auto;           /* centra la sección */
+}
+
+.descripcion h1 {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.descripcion p {
+	max-width: 600px;
+	line-height: 1.6;
+	opacity: 0.9;
+}
+
+.descripcion a {
+    color: var(--color-bg);
+    border: none;
+    cursor: pointer;
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.descripcion a:hover {
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+	.descripcion {
+		padding: 2rem 1rem;
+	}
+
+	.descripcion h1 {
+		font-size: 1.6rem;
+	}
+}

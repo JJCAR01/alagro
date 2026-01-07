@@ -1,0 +1,64 @@
+---
+import './card.css';
+---
+
+
+<section class="cards">
+	<article class="card">
+		<img src="/cards/calidad.jpg" alt="Calidad" />
+		<div class="card-content">
+			<h3>Mas de <span class="counter" data-target="9">1</span></h3>
+			<p>Años aportando al desarrollo de nuestros campesinos.</p>
+		</div>
+	</article>
+
+	<article class="card">
+		<img src="/cards/sostenibilidad.jpg" alt="Sostenibilidad" />
+		<div class="card-content">
+			<h3>Hoy son <span class="counter" data-target="236">1</span></h3>
+			<p>Familias beneficiadas por nuestra Cooperativa.</p>
+		</div>
+	</article>
+
+	<article class="card">
+		<img src="/cards/confianza.jpg" alt="Confianza" />
+		<div class="card-content">
+			<h3>Contamos con <span class="counter" data-target="26">1</span></h3>
+			<p>Puntos de acopio distribuidos en 7 municipios.</p>
+		</div>
+	</article>
+</section>
+
+<script>
+	const counters = document.querySelectorAll('.counter');
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) return;
+
+			const counter = entry.target as HTMLElement;
+			const target = Number(counter.dataset.target);
+			const duration = 2000; // duración total en ms (2 segundos)
+			const steps = 60; // cantidad de pasos
+			const increment = target / steps;
+			let current = 0;
+			let step = 0;
+
+			const timer = setInterval(() => {
+				step++;
+				current += increment;
+
+				if (step >= steps) {
+					counter.textContent = target.toString();
+					clearInterval(timer);
+				} else {
+					counter.textContent = Math.floor(current).toString();
+				}
+			}, duration / steps);
+
+			observer.unobserve(counter);
+		});
+	}, { threshold: 0.6 });
+
+	counters.forEach(counter => observer.observe(counter));
+</script>

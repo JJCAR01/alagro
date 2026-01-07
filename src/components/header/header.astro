@@ -1,0 +1,46 @@
+---
+import './header.css';
+import astroLogo from '../../assets/astro.svg';
+---
+
+
+<header class="header">
+	<div class="header-left">
+		<img src={astroLogo.src} alt="Logo" class="logo" />
+	</div>
+
+	<button class="menu-toggle" aria-label="Abrir menú">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<nav class="header-center" id="menu">
+		<a href="#">Inicio</a>
+		<a href="#">Quienes somos</a>
+		<a href="#">Productos</a>
+		<a href="#">Gestión social</a>
+		<a href="#">Acopios de leche</a>
+		<a href="#">PQRS</a>
+	</nav>
+
+
+	<div class="header-right">
+		<img src={astroLogo.src} alt="Logo 1" class="logo" />
+		<img src={astroLogo.src} alt="Logo 2" class="logo" />
+	</div>
+</header>
+
+<script>
+	const btn = document.querySelector('.menu-toggle');
+	const menu = document.querySelector('#menu');
+
+	if (btn && menu) {
+		btn.addEventListener('click', () => {
+			menu.classList.toggle('open');
+			btn.classList.toggle('open');
+		});
+	}
+</script>
+
+

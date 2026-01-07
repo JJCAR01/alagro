@@ -1,0 +1,59 @@
+/* VARIABLES */
+:root {
+	--color-primary: #4f46e5;
+	--color-bg: #000000;
+	--color-text: #e5e7eb;
+	--color-secondary: #ce6e20;
+	--color-header: #eaeaea;
+	--background: #ffffff;
+	--background-accent: #e0e7ff;
+}
+
+
+/* RESET BÁSICO */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: system-ui, sans-serif;
+	min-height: 100vh;
+	position: relative;
+	background: #ffffff;
+	overflow-x: hidden;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23eaf0ff' d='M0 0H1440V500C1100 420 900 350 650 300 400 250 200 180 0 120Z'/%3E%3C/svg%3E") no-repeat bottom right / cover;
+	z-index: -1;
+}
+
+
+
+a {
+	color: var(--color-bg);
+	text-decoration: none;
+}
+a {
+    font-size: 25px;
+}
+
+p {
+	color: var(--color-bg);
+	text-decoration: none;
+}
+p {
+    font-size: 25px;
+}
+h1 {
+    font-size: 25px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-bg);
+}

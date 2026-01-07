@@ -1,0 +1,55 @@
+---
+import './footer.css';
+import Logo from '../../assets/astro.svg';
+import Facebook from '../../assets/icons/facebook.png';
+import Instagram from '../../assets/icons/instagram.png';
+import WhatsApp from '../../assets/icons/whatsapp.png';
+---
+
+<footer class="footer">
+	<div class="footer-container">
+		<!-- COLUMNA 1 -->
+		<div class="footer-brand">
+			<img src={Logo.src} alt="Logo" class="footer-logo" />
+			<p>
+				Somos una cooperativa comprometida con el desarrollo sostenible,
+				la calidad y el bienestar de nuestras comunidades.
+			</p>
+		</div>
+
+		<!-- COLUMNA 2 -->
+		<div class="footer-links">
+			<h4>Empresa</h4>
+			<a href="#">Quiénes somos</a>
+			<a href="#">Productos</a>
+			<a href="#">Gestión social</a>
+			<a href="#">PQRS</a>
+		</div>
+
+		<!-- COLUMNA 3 -->
+		<div class="footer-links">
+			<h4>Contacto</h4>
+			<a href="#">📍 7 municipios</a>
+			<a href="#">📞 +57 300 000 0000</a>
+			<a href="#">✉️ contacto@cooperativa.com</a>
+		</div>
+
+		<!-- COLUMNA 4 -->
+		<div class="social-icons">
+            <a href="#" aria-label="Facebook">
+                <img src={Facebook.src} alt="Facebook" />
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img src={Instagram.src} alt="Instagram" />
+            </a>
+            <a href="#" aria-label="WhatsApp">
+                <img src={WhatsApp.src} alt="WhatsApp" />
+            </a>
+        </div>
+
+	</div>
+
+	<div class="footer-bottom">
+		<p>© {new Date().getFullYear()} Cooperativa. Todos los derechos reservados.</p>
+	</div>
+</footer>

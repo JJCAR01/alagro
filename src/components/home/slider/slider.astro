@@ -1,0 +1,63 @@
+---
+import './slider.css';
+
+const slides = [
+	{
+		image: '/slides/slide1.jpg',
+		link: 'https://www.youtube.com/'
+	},
+	{
+		image: '/slides/slide2.jpg',
+		link: 'https://www.youtube.com/'
+	},
+	{
+		image: '/slides/slide3.jpg',
+		link: 'https://www.youtube.com/'
+	}
+];
+---
+
+<section class="hero-slider">
+	<div class="slides">
+		{slides.map((slide, index) => (
+			<a
+				href={slide.link}
+				class={`slide ${index === 0 ? 'active' : ''}`}
+				style={`background-image: url(${slide.image})`}
+				aria-label="Ir a sección"
+			>
+			</a>
+		))}
+	</div>
+
+	<button class="arrow left" aria-label="Anterior">‹</button>
+	<button class="arrow right" aria-label="Siguiente">›</button>
+</section>
+
+
+<script>
+	let current = 0;
+	const slides = document.querySelectorAll('.slide');
+	const nextBtn = document.querySelector('.arrow.right');
+	const prevBtn = document.querySelector('.arrow.left');
+
+	function showSlide(index:any) {
+		slides.forEach(slide => slide.classList.remove('active'));
+		slides[index].classList.add('active');
+	}
+
+	function nextSlide() {
+		current = (current + 1) % slides.length;
+		showSlide(current);
+	}
+
+	function prevSlide() {
+		current = (current - 1 + slides.length) % slides.length;
+		showSlide(current);
+	}
+
+	nextBtn?.addEventListener('click', nextSlide);
+	prevBtn?.addEventListener('click', prevSlide);
+
+	setInterval(nextSlide, 5000);
+</script>
