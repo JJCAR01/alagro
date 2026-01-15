@@ -8,32 +8,56 @@
 	gap: 1rem;                /* espacio entre h1, p y botón */
 
 	margin: 0 auto;           /* centra la sección */
+	margin-top: -30px;
 }
 
 .descripcion h1 {
-	font-size: 2rem;
 	margin-bottom: 0.5rem;
+	color: var(--color-white);
 }
 
 .descripcion p {
-	max-width: 600px;
+	max-width: 1000px;
 	line-height: 1.6;
+	font-size: 1.5rem;
 	opacity: 0.9;
+	color: var(--color-white);
+
 }
 
-.descripcion a {
-    color: var(--color-bg);
-    border: none;
-    cursor: pointer;
-	padding: 0.5rem 1rem;
-	border-radius: 999px;
-	transition: background-color 0.3s ease, color 0.3s ease;
-}
+.btn-leer {
+	margin-top: 0.75rem;
+	padding: 0.6rem 1.6rem;
 
-.descripcion a:hover {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	font-size: 1.5rem;
+	font-weight: 600;
+
+	color: #fff;
 	background-color: var(--color-secondary);
-	color: var(--color-text);
+	border-radius: 999px;
+
+	text-decoration: none;
+	transition: background-color 0.3s ease, transform 0.25s ease;
 }
+
+.btn-leer span {
+	transition: transform 0.25s ease;
+}
+
+.btn-leer:hover {
+	background-color: var(--color-white);
+	color: var(--color-primary);
+	transform: translateY(-2px);
+}
+
+.btn-leer:hover span {
+	transform: translateX(4px);
+}
+
 
 @media (max-width: 768px) {
 	.descripcion {
@@ -44,3 +68,4 @@
 		font-size: 1.6rem;
 	}
 }
+	

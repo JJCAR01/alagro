@@ -1,12 +1,15 @@
 ---
 import './header.css';
-import astroLogo from '../../assets/astro.svg';
+import LogoAlagro from '../../assets/icons/logoAlagro.png';
+import LogoLaLola from '../../assets/icons/lalola_logo.png';
+import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
 ---
 
 
-<header class="header">
+<header class="header header-shadow">
+
 	<div class="header-left">
-		<img src={astroLogo.src} alt="Logo" class="logo" />
+		<img src={LogoAlagro.src} alt="Alagro" class="logo" />
 	</div>
 
 	<button class="menu-toggle" aria-label="Abrir menú">
@@ -26,8 +29,8 @@ import astroLogo from '../../assets/astro.svg';
 
 
 	<div class="header-right">
-		<img src={astroLogo.src} alt="Logo 1" class="logo" />
-		<img src={astroLogo.src} alt="Logo 2" class="logo" />
+		<img src={LogoLaRueda.src} alt="La Rueda" class="logo" />
+		<img src={LogoLaLola.src} alt="La Lola" class="logo" />
 	</div>
 </header>
 

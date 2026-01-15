@@ -13,6 +13,17 @@ h2 {
 	opacity: 0.85;
 }
 
+.productos h1{
+	margin-bottom: 2rem;
+	color: var(--color-white);
+
+}
+
+.aliados h1{
+	margin-bottom: 2rem;
+	color: var(--color-primary);
+}
+
 .logos-center {
 	display: flex;
 	justify-content: center;
@@ -25,56 +36,65 @@ h2 {
 }
 
 .logos-marquee {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	overflow: hidden;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .marquee {
-	width: 100%;
-	overflow: hidden;
+  display: flex;
 }
 
-.marquee-track {
-	display: flex;
-	gap: 3rem;
-	width: max-content;
-	animation: marquee-left 25s linear infinite;
+.marquee-left .marquee-track {
+  animation: scroll-left 20s linear infinite;
 }
 
 .marquee-right .marquee-track {
-	animation: marquee-right 25s linear infinite;
+  animation: scroll-right 10s linear infinite;
+  white-space: nowrap; /* asegura que no se rompa la fila */
 }
 
-@keyframes marquee-left {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
-	}
+.marquee-right {
+  margin-top: 2rem; /* ajusta el espacio vertical entre las filas */
 }
 
-@keyframes marquee-right {
-	from {
-		transform: translateX(-50%);
-	}
-	to {
-		transform: translateX(0);
-	}
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;       /* evita que los logos salten a otra línea */
+  min-width: max-content;  /* fuerza que la fila tenga el ancho total de los logos */
 }
 
+/* Pausar al hover */
 .marquee-track:hover {
-	animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 @media (max-width: 768px) {
 	.marquee-track {
-		animation-duration: 40s;
+		animation-duration: 60s;
 	}
 
 	.logo {
+		height: 55px;
+	}
+  .productos-logos {
+		flex-wrap: wrap;          /* permite bajar a otra línea */
+		justify-content: center; /* centra los logos */
+		gap: 1.5rem;              /* menos espacio */
+	}
+
+	.productos-logos img {
 		height: 55px;
 	}
 }

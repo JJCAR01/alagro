@@ -1,61 +1,68 @@
 ---
 import './producto.css';
-import Logo from '../../../assets/astro.svg';
+
+const logosArriba = [
+  "adr_logo.jpeg",
+  "aldeas_infantiles_logo.png",
+  "auralac_sa_logo.png",
+  "clinicas_oriente_logo.png",
+  "corlatina_logo.png",
+  "icbf_logo.png",
+  "nutriceres_logo.png",
+  "nutriser_logo.png",
+  "presencia_suiza_logo.jpg",
+  "productora_logo.png",
+  "pronatural_logo.png",
+  "gr_logistica_logo.svg",
+  "servid_logo.png",
+];
+
+const logosAbajo = [
+  "contegral_logo.png",
+  "finca_logo.png",
+  "laboratorio_dia_logo.png",
+  "somex_logo.png",
+];
+
+const repeatLogos = (logos: string[]) => [...logos, ...logos]; // duplicamos automáticamente
+import LogoLaLola from '../../../assets/icons/lalola_logo.png';
+import Astro from '../../assets/astro.svg';
 ---
 
 <section class="productos">
-	<h2>Nuestros productos</h2>
-
-	<div class="logos-center">
-		<div class="productos-logos">
-			<img src={Logo.src} alt="Logo 1" class="logo" />
-			<img src={Logo.src} alt="Logo 2" class="logo" />
-			<img src={Logo.src} alt="Logo 3" class="logo" />
-		</div>
-	</div>
+  <h1>Nuestros productos</h1>
+  <div class="logos-center">
+    <div class="productos-logos">
+      <img src={LogoLaLola.src} alt="La Lola" class="logo" />
+      <img src={Astro.src} alt="La Rueda" class="logo" />
+      <img src={Astro.src} alt="Almacén" class="logo" />
+    </div>
+  </div>
 </section>
 
 <section class="aliados">
-	<h2>Nuestros aliados</h2>
+  <h1>Nuestros aliados</h1>
+  <div class="logos-marquee">
+    <!-- Marquee arriba -->
+    <div class="marquee marquee-left">
+      <div class="marquee-track">
+        {repeatLogos(logosArriba).map((logo) => (
+          <img src={`/logosArriba/${logo}`} class="logo" />
+        ))}
+      </div>
+    </div>
 
-	<div class="logos-marquee">
-        <div class="marquee marquee-left">
-            <div class="marquee-track">
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-
-                <!-- DUPLICADO -->
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-            </div>
-        </div>
-
-        <div class="marquee marquee-right">
-            <div class="marquee-track">
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-
-                <!-- DUPLICADO -->
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-                <img src={Logo.src} class="logo" />
-            </div>
+    <!-- Marquee abajo -->
+    {/* fila abajo */}
+    <div class="marquee marquee-right">
+        <div class="marquee-track">
+        {[...logosAbajo, ...logosAbajo, ...logosAbajo, ...logosAbajo, ...logosAbajo, ...logosAbajo, ...logosAbajo].map(logo => (
+            <img src={`/logosAbajo/${logo}`} class="logo" />
+        ))}
         </div>
     </div>
 
+
+
+  </div>
 </section>

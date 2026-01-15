@@ -1,9 +1,36 @@
+@font-face {
+	font-family: 'Asap';
+	src: url('/fonts/asap/Asap-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Asap';
+	src: url('/fonts/asap/Asap-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Asap';
+	src: url('/fonts/asap/Asap-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+
 /* VARIABLES */
 :root {
-	--color-primary: #4f46e5;
+	--color-primary: rgba(0,143,196);
+	--color-secondary: rgba(216,120,44);
+	--secondary-dark: rgba(177,100,36);
 	--color-bg: #000000;
+	--color-white: #ffffff;
 	--color-text: #e5e7eb;
-	--color-secondary: #ce6e20;
 	--color-header: #eaeaea;
 	--background: #ffffff;
 	--background-accent: #e0e7ff;
@@ -17,23 +44,13 @@
 	box-sizing: border-box;
 }
 
-
 body {
-	font-family: system-ui, sans-serif;
+	font-family: 'Asap', system-ui, sans-serif;
 	min-height: 100vh;
-	position: relative;
 	background: #ffffff;
 	overflow-x: hidden;
+	background: url('/fondo.png') center/cover no-repeat;
 }
-
-body::before {
-	content: '';
-	position: fixed;
-	inset: 0;
-	background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23eaf0ff' d='M0 0H1440V500C1100 420 900 350 650 300 400 250 200 180 0 120Z'/%3E%3C/svg%3E") no-repeat bottom right / cover;
-	z-index: -1;
-}
-
 
 
 a {
@@ -41,7 +58,7 @@ a {
 	text-decoration: none;
 }
 a {
-    font-size: 25px;
+    font-size: 16px;
 }
 
 p {
@@ -51,9 +68,10 @@ p {
 p {
     font-size: 25px;
 }
-h1 {
-    font-size: 25px;
+
+h1{
+	font-size: 3rem;
 }
-h1, h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
     color: var(--color-bg);
 }
