@@ -49,16 +49,15 @@ body {
 	min-height: 100vh;
 	background: #ffffff;
 	overflow-x: hidden;
-	background: url('/fondo.png') center/cover no-repeat;
+	/* background: url('/fondo.png') center/cover no-repeat; */
 }
 
 
 a {
 	color: var(--color-bg);
 	text-decoration: none;
-}
-a {
-    font-size: 16px;
+	font-size: clamp(12px, 2.5vw, 16px);
+
 }
 
 p {

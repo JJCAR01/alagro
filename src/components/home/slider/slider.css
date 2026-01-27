@@ -3,6 +3,7 @@
 	width: 85%;
 	height: 60vh;
 	margin: 10px auto;
+	z-index: 0;
 }
 
 .slides {

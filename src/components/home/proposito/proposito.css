@@ -5,10 +5,12 @@
 	text-align: center;
 
 	padding: 3rem 1.5rem;
-	gap: 1rem;                /* espacio entre h1, p y botón */
 
 	margin: 0 auto;           /* centra la sección */
-	margin-top: -30px;
+
+	background: url('/fondo_proposito.png');
+	background-size: cover;
+	background-position: center;
 }
 
 .descripcion h1 {

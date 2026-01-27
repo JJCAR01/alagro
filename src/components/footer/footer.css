@@ -1,5 +1,5 @@
 .footer {
-	background: linear-gradient(135deg, #eaf1fb 0%, #7aa9d6 100%);
+	background: linear-gradient(135deg, #2887bf 0%, #242659 100%);
 	border-top-left-radius: 36px;
 	border-top-right-radius: 36px;
 	padding: 2.5rem 2rem 1.5rem; /* 🔽 menos alto */
@@ -16,6 +16,7 @@
 
 .footer-container p {
 	font-size: 18px;
+	color: var(--color-white);
 }
 
 /* LOGO */
@@ -34,7 +35,7 @@
 .footer-links a {
 	display: block;
 	margin-bottom: 0.6rem;
-	color: #2b2b2b;
+	color: var(--color-white);
 	transition: color 0.2s ease;
 }
 
@@ -47,7 +48,7 @@
 .footer h4 {
 	font-size: 0.95rem;
 	margin-bottom: 0.6rem;
-	color: #111827;
+	color: var(--color-white);
 }
 
 /* REDES */
@@ -112,6 +113,8 @@
 
 .footer-bottom p{
 	font-size: 14px;
+	color: var(--color-white);
+
 }
 
 /* RESPONSIVE */

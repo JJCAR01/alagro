@@ -19,10 +19,53 @@ import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
 	</button>
 
 	<nav class="header-center" id="menu">
-		<a href="#">Inicio</a>
-		<a href="#">Quienes somos</a>
+		<a href="/">Inicio</a>
+		<div class="dropdown">
+			<a href="/quienes_somos" class="dropdown-toggle">Quienes somos</a>
+			<div class="dropdown-content">
+				<div class="dropdown-column">
+					<a href="/quienes_somos" class="dropdown-title">¿Quiénes somos?</a>
+					<a href="/quienes_somos#historia">Historia</a>
+					<a href="/quienes_somos#marca">Nuestra marca</a>
+					<a href="/quienes_somos#compromiso">Compromiso</a>
+					<a href="/quienes_somos#valores">Valores corporativos</a>
+					<a href="/quienes_somos#organigrama">Organigrama</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="#" class="dropdown-title">Estatutos, códigos y normas</a>
+					<a href="/estatutos">Estatutos</a>
+					<a href="/codigo-buen-gobierno">Código de buen gobierno</a>
+					<a href="/codigo-conducta">Código de conducta</a>
+					<a href="/marco-normativo-legal">Marco legal y normativo</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="#" class="dropdown-title">Gestión del riesgo</a>
+					<a href="#">SARLAFT</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="#" class="dropdown-title">Asociados</a>
+					<a href="/asociados">Deberes</a>
+					<a href="#">Derechos</a>
+					<a href="#">Formatos</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="#" class="dropdown-title">Infomes y balances</a>
+					<a href="#">Acta de constitución</a>
+					<a href="#">Año 2021</a>
+					<a href="#">Año 2022</a>
+					<a href="#">Año 2023</a>
+					<a href="#">Año 2024</a>
+					<a href="#">Año 2025</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="#" class="dropdown-title">Trabaja con nosotros</a>
+				</div>
+			</div>
+		</div>
 		<a href="#">Productos</a>
 		<a href="#">Gestión social</a>
+		
+		
 		<a href="#">Acopios de leche</a>
 		<a href="#">PQRS</a>
 	</nav>
@@ -37,6 +80,7 @@ import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
 <script>
 	const btn = document.querySelector('.menu-toggle');
 	const menu = document.querySelector('#menu');
+	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
 	if (btn && menu) {
 		btn.addEventListener('click', () => {
@@ -44,6 +88,30 @@ import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
 			btn.classList.toggle('open');
 		});
 	}
+
+	// Manejo del dropdown en móvil
+	dropdownToggles.forEach(toggle => {
+		toggle.addEventListener('click', (e) => {
+			// Solo en móvil (max-width: 768px)
+			if (window.innerWidth <= 768) {
+				e.preventDefault();
+				const dropdown = toggle.closest('.dropdown');
+				dropdown?.classList.toggle('open');
+			}
+		});
+	});
+
+	// Cerrar dropdown al hacer click fuera
+	document.addEventListener('click', (e) => {
+		if (window.innerWidth <= 768) {
+			dropdownToggles.forEach(toggle => {
+				const dropdown = toggle.closest('.dropdown');
+				if (dropdown && e.target instanceof Node && !dropdown.contains(e.target)) {
+					dropdown.classList.remove('open');
+				}
+			});
+		}
+	});
 </script>
 
 

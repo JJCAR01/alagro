@@ -25,8 +25,10 @@ const logosAbajo = [
 ];
 
 const repeatLogos = (logos: string[]) => [...logos, ...logos]; // duplicamos automáticamente
-import LogoLaLola from '../../../assets/icons/lalola_logo.png';
-import Astro from '../../assets/astro.svg';
+import LogoLaLola from '../../../assets/icons/lola_blanco.png';
+import LogoRueda from '../../../assets/icons/rueda_blanco.png';
+import LogoAlagro from '../../../assets/icons/alagro_blanco.png';
+
 ---
 
 <section class="productos">
@@ -34,8 +36,8 @@ import Astro from '../../assets/astro.svg';
   <div class="logos-center">
     <div class="productos-logos">
       <img src={LogoLaLola.src} alt="La Lola" class="logo" />
-      <img src={Astro.src} alt="La Rueda" class="logo" />
-      <img src={Astro.src} alt="Almacén" class="logo" />
+      <img src={LogoAlagro.src} alt="Almacen" class="logo" />
+      <img src={LogoRueda.src} alt="La Rueda" class="logo" />
     </div>
   </div>
 </section>
