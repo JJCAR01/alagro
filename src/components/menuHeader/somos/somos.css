@@ -3,7 +3,6 @@
     gap: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 2rem;
 }
 
 .content {
@@ -18,14 +17,12 @@
     color: var(--color-primary);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    margin-top: 0;
 }
 
 .content h3 {
     color: var(--color-secondary);
     font-size: 1.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .content p {
@@ -46,6 +43,14 @@ section {
     aspect-ratio: 16/6;
     object-fit: cover; 
     margin-bottom: 2rem;
+}
+
+.image-organigrama {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain; 
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {

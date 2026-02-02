@@ -1,0 +1,28 @@
+---
+import '../producto.css';
+
+const productos = [
+  { id: 1, name: 'Quedo Jalapeño', img: '/la-rueda/jalapeno.png', desc: 'Cacao en polvo 125g', url: '#' },
+  { id: 2, name: 'Queso Pimienta Putumayo', img: '/la-rueda/pimienta_putumayo.png', desc: 'Lechenela 250g', url: '#' },
+  { id: 3, name: 'Queso Jalepeño', img: '/la-rueda/queso_jalepeno.png', desc: 'Panela en polvo 250g', url: '#' },
+  { id: 4, name: 'Queso Tomillo', img: '/la-rueda/tomillo.png', desc: 'Leche en polvo entera 900g', url: '#' },
+  { id: 5, name: 'Queso Trufa de Italia', img: '/la-rueda/trufa_italiana.png', desc: 'Leche en polvo entera 900g', url: '#' }
+];
+---
+
+
+  <main class="container productos-page">
+    <h1>Productos — La Rueda</h1>
+    <p>Listado de productos disponibles de la marca La Rueda.</p>
+
+    <section class="productos-grid">
+      {productos.map(producto => (
+        <article class="producto-card">
+          <img src={producto.img} alt={producto.name} class="producto-card-img" />
+          <h3 class="producto-card-title">{producto.name}</h3>
+          <p class="producto-card-desc">{producto.desc}</p>
+          <a class="producto-card-link" href={producto.url}>Ver producto</a>
+        </article>
+      ))}
+    </section>
+  </main>

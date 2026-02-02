@@ -1,0 +1,95 @@
+.container.productos-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+.producto-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border: 2px solid rgba(0,0,0,0.06);
+    transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s ease, background-color 0.2s ease, border-color 0.18s ease;
+    will-change: transform;
+}
+
+.producto-card:hover,
+.producto-card:focus-within {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 22px 50px rgba(8, 30, 56, 0.16);
+    /* highlight border on hover to create subtle emphasis */
+    border-color: var(--color-secondary);
+}
+
+.producto-card:active {
+    transform: translateY(-4px) scale(0.995);
+}
+
+.producto-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0 auto 0.6rem auto;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.producto-card:hover .producto-card-img {
+    transform: translateY(-6px) scale(1.06);
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.09));
+}
+
+.producto-card-title {
+    margin: 0.25rem 0;
+    color: var(--lalola-color);
+    font-weight: 700;
+}
+
+.producto-card-desc {
+    font-size: 0.92rem;
+    color: var(--color-secondary);
+    margin: 0;
+    flex: 1 0 auto;
+}
+
+.producto-card-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    text-decoration: none;
+    transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.producto-card-link:hover,
+.producto-card-link:focus {
+    background: color-mix(in srgb, var(--color-secondary) 82%, black 6%);
+    transform: translateY(-2px);
+}
+
+/* Small badge example in top-right corner */
+.producto-card::after {
+    content: '';
+    position: absolute;
+}
+
+/* Make sure grid items have relative positioning for pseudo elements */
+.productos-grid .producto-card {
+    position: relative;
+}
+
+/* Accessible focus outline */
+.producto-card:focus-within {
+    outline: 3px solid rgba(66,133,244,0.12);
+    outline-offset: 4px;
+}
