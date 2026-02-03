@@ -255,7 +255,6 @@
 .dropdown-column a {
 	display: block;
 	color: var(--color-secondary);
-	font-size: 0.9rem;
 	transform: none;
 	background-color: transparent;
 }
@@ -270,8 +269,8 @@
 /* Imágenes en dropdown-column */
 .dropdown-column img {
 	width: 100%;
-	max-width: 100px;
-	height: auto;
+	max-width: 150px;
+	height: 100px;
 	object-fit: contain;
 	margin: 0 auto 1rem auto;
 	display: block;
@@ -402,16 +401,6 @@
 	padding-left: 0.8rem;
 }
 
-/* Imágenes en dropdown-column */
-.dropdown-column img {
-	width: 100%;
-	max-width: 100px;
-	height: 40%;
-	object-fit: contain;
-	margin: 0 auto 1rem auto;
-	display: block;
-	transition: transform 0.3s ease;
-}
 
 .dropdown-column:hover img {
 	transform: scale(1.05);

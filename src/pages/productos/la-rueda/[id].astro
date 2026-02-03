@@ -3,10 +3,10 @@ import Layout from '../../../layouts/base.astro';
 import Header from '../../../components/header/header.astro';
 import Footer from '../../../components/footer/footer.astro';
 
-import { listaProductosLaLola } from '../../../data/productosLaLola';
+import { listaProductosLaRueda } from '../../../data/productosLaRueda';
 
 export function getStaticPaths() {
-  return listaProductosLaLola.map((producto) => ({
+  return listaProductosLaRueda.map((producto) => ({
     params: { id: producto.id.toString() },
     props: { producto }
   }));
@@ -43,7 +43,7 @@ const { producto } = Astro.props;
     <section class="productos-relacionados">
       <h2>Otros productos de La Lola</h2>
       <div class="grid-relacionados">
-        {listaProductosLaLola.map(prod => (
+        {listaProductosLaRueda.map(prod => (
           <a href={`/productos/la-lola/${prod.id}`} class={`card-relacionado ${prod.id === producto.id ? 'activo' : ''}`}>
             <img src={prod.img} alt={prod.name} />
             <p>{prod.name}</p>

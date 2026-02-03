@@ -1,0 +1,136 @@
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* BOTÓN */
+.whatsapp-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.whatsapp-icon.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+.whatsapp-icon img {
+    width: 55px;
+}
+
+/* LABEL */
+.whatsapp-label {
+    position: absolute;
+    right: 75px;
+    bottom: 14px;
+
+    background: #ffffff;
+    padding: 8px 14px;
+    border-radius: 18px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .25s ease, transform .25s ease;
+
+    pointer-events: none;
+}
+
+/* Mostrar label */
+.whatsapp-label.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Colita tipo WhatsApp */
+.whatsapp-label::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+
+/* POPUP */
+.whatsapp-popup {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    background: #f0fdf6;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+.whatsapp-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.06);
+}
+
+
+/* HEADER */
+.popup-header {
+    background: #25d366;
+    color: white;
+    padding: 10px;
+    border-radius: 14px 14px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.popup-header img {
+    width: 30px;
+}
+
+/* BODY */
+.popup-body {
+    padding: 12px;
+}
+
+.message {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.open-chat {
+    display: block;
+    background: #25d366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}

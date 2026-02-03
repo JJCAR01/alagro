@@ -1,0 +1,82 @@
+---
+import WhatsApp from '../../assets/icons/whatsapp.png';
+import './whatsapp.css';
+---
+
+<div class="whatsapp-container" id="waContainer">
+
+    <!-- BOTÓN WHATSAPP -->
+    <div class="whatsapp-icon" id="waIcon">
+        <img src={WhatsApp.src} alt="WhatsApp" />
+    </div>
+
+    <!-- LABEL -->
+    <div class="whatsapp-label" id="waLabel">
+        ¿Necesitas ayuda?
+    </div>
+
+    <!-- POPUP -->
+    <div class="whatsapp-popup" id="waPopup">
+        <div class="popup-header">
+            <img src={WhatsApp.src} alt="WhatsApp" />
+            <span>WhatsApp</span>
+        </div>
+
+        <div class="popup-body">
+            <div class="message">
+                <strong>Hola</strong><br />
+                Quiero contactarme con Alagro
+            </div>
+
+            <a
+                href="https://wa.me/573011663752?text=Hola,%20quiero%20contactarme%20con%20Alagro"
+                target="_blank"
+                class="open-chat"
+            >
+                Abrir chat ➤
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function initWhatsapp() {
+        const icon = document.getElementById('waIcon');
+        const label = document.getElementById('waLabel');
+        const popup = document.getElementById('waPopup');
+
+        if (!icon || !label || !popup) return;
+
+        let popupTimer:any;
+
+        icon.onmouseenter = () => {
+        label.classList.add('show');
+
+        popupTimer = setTimeout(() => {
+            popup.classList.add('show');
+            icon.classList.add('hidden');
+        }, 1200);
+        };
+
+        icon.onmouseleave = () => {
+        clearTimeout(popupTimer);
+        };
+
+        popup.onmouseleave = () => {
+        popup.classList.remove('show');
+        label.classList.remove('show');
+        icon.classList.remove('hidden');
+        };
+
+        popup.onmouseenter = () => {
+        clearTimeout(popupTimer);
+        };
+    }
+
+    // Carga inicial
+    initWhatsapp();
+
+    // Re-activar después de cada navegación Astro
+    document.addEventListener('astro:page-load', initWhatsapp);
+</script>

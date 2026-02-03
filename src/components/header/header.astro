@@ -4,6 +4,10 @@ import LogoAlagro from '../../assets/icons/logoAlagro.png';
 import LogoLaLola from '../../assets/icons/lalola_logo.png';
 import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
 import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
+
+import { listaProductosLaLola } from '../../data/productosLaLola';
+import { listaProductosLaRueda } from '../../data/productosLaRueda';
+
 ---
 
 
@@ -131,39 +135,52 @@ import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
 		<div class="dropdown">
 			<a href="#" class="dropdown-toggle">Productos</a>
 			<div class="dropdown-content">
+				
 				<div class="dropdown-column">
-					<a href="/productos/la-lola">
-						<img src={LogoLaLola.src} alt="La Lola"/>
+					<a href="/productos/la-lola" class="logo-box">
+						<img src={LogoLaLola.src} alt="La Lola" />
 					</a>
-					<a href="#" style="color: var(--lalola-color);">Cacao</a>
-					<a href="#" style="color: var(--lalola-color);">Leche en polvo entera</a>
-					<a href="#" style="color: var(--lalola-color);">Lechenela</a>
-					<a href="#" style="color: var(--lalola-color);">Panela en polvo</a>
+
+					{listaProductosLaLola.map((producto:any) => (
+						<a
+						href={`/productos/la-lola/${producto.id}`}
+						style="color: var(--lalola-color);"
+						>
+						{producto.name}
+						</a>
+					))}
 				</div>
+
 				<div class="dropdown-column">
 					
 					<img src={LogoAlagroSinFondo.src} alt="Almacen"/>
-					<a href="#" style="color: var(--secondary-dark);">Producto 1</a>
-					<a href="#" style="color: var(--secondary-dark);">Producto 2</a>
-					<a href="#" style="color: var(--secondary-dark);">Producto 3</a>
+					<a href="#" style="color: var(--secondary-dark);">Cocentrados</a>
+					<a href="#" style="color: var(--secondary-dark);">Ferlitizantes</a>
+					<a href="#" style="color: var(--secondary-dark);">Medicamentos</a>
+					<a href="#" style="color: var(--secondary-dark);">Varios</a>
+
 				</div>
 				<div class="dropdown-column">
 					<a href="/productos/la-rueda">
 						<img src={LogoLaRueda.src} alt="La Rueda"/>
 					</a>
-					<a href="#" style="color: var(--larueda-color);">Queso madurado</a>
-					<a href="#" style="color: var(--larueda-color);">Queso semi maduro</a>
-					<a href="#" style="color: var(--larueda-color);">Queso tomillo</a>
-					<a href="#" style="color: var(--larueda-color);">Queso truja de Italia</a>
-					<a href="#" style="color: var(--larueda-color);">Queso jalapeño</a>
-					<a href="#" style="color: var(--larueda-color);">Queso pimienta putumayo</a>
+					{listaProductosLaRueda.map((producto:any) => (
+						<a
+						href={`/productos/la-rueda/${producto.id}`}
+						style="color: var(--larueda-color);"
+						>
+						{producto.name}
+						</a>
+					))}
 				</div>
 			</div>
 		</div>
 		<a href="#">Gestión social</a>
 		
-		
-		<a href="#">Acopios de leche</a>
+	
+		<a href="https://appalagro.com" target="_blank" rel="noopener noreferrer">
+			Acopios de leche
+		</a>
 		<a href="#">PQRS</a>
 	</nav>
 
