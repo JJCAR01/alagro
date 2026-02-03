@@ -4,4 +4,4 @@ export default defineConfig({
   site: 'https://alagro.fly.dev',
   base: '/',
 });
-// https://astro.build/configuration
+// https://astro.build/config
