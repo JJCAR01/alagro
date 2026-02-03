@@ -1,16 +1,21 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+// Importa el CSS aquí para que Astro lo procese correctamente
+import '../styles/global.css'; 
 ---
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="stylesheet" href="/src/styles/global.css" />
-	<link rel="icon" type="image/png" href="/src/assets/icons/logoEmpresa.png" />
-	<title>Alagro</title>
-	<ViewTransitions />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- ELIMINA ESTA LÍNEA: <link rel="stylesheet" href="/src/styles/global.css" /> -->
+    
+    <!-- Para las imágenes en src, es mejor usar la carpeta public o importarlas -->
+    <link rel="icon" type="image/png" href="/logoEmpresa.png" /> 
+    
+    <title>Alagro</title>
+    <ViewTransitions />
 </head>
 
 <body>
