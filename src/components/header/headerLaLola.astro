@@ -1,9 +1,14 @@
 ---
 import './header.css';
-import LogoAlagro from '../../assets/icons/logoAlagro.png';
 import LogoLaLola from '../../assets/icons/lalola_logo.png';
+import LogoLaLolaBlanco from '../../assets/icons/lola_blanco.png';
 import LogoLaRueda from '../../assets/icons/la_rueda_logo.png';
-import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
+import LogoSlogan from '../../assets/icons/slogan.png';
+import LogoAlagroSinFondo from '../../assets/icons/alagro_blanco.png';
+
+import { listaProductosLaLola } from '../../data/productosLaLola';
+import { listaProductosLaRueda } from '../../data/productosLaRueda';
+import { listaProductosAlmacen } from '../../data/productosAlmacen';
 ---
 
 
@@ -45,9 +50,9 @@ import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
 				</div>
 				<div class="dropdown-column">
 					<a href="#" class="dropdown-title">Asociados</a>
-					<a href="/asociados">Deberes</a>
-					<a href="#">Derechos</a>
-					<a href="#">Formatos</a>
+					<a href="/asociados#deberes">Deberes</a>
+					<a href="/asociados#derechos">Derechos</a>
+					<a href="/formatos">Formatos</a>
 				</div>
 				<div class="dropdown-column">
 					<a href="#" class="dropdown-title">Infomes y balances</a>
@@ -55,65 +60,65 @@ import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2025</a>
 						<div class="submenu-content">
-							<a href="/informes/informe-gestion-2025">Informe de gestión</a>
-							<a href="/informes/estados-financieros-2025">Estados financieros</a>
-							<a href="/informes/dictamen-revosoria-2025">Dictamen Revisoría fiscal</a>
-							<a href="/informes/acta-asamblea-2025">Acta asamblea</a>
-							<a href="/informes/registro-esald-2025">Actualización registros ESALD</a>
-							<a href="/informes/declaracion-renta-2025">Declaración de renta</a>
-							<a href="/informes/memoria-economica-2025">Memoria económica</a>
-							<a href="/informes/certificado-antecedentes-2025">Certificado de antecedentes</a>
-							<a href="/informes/certificado-renumeracion-2025">Certificado de renumeración directivos</a>
+							<a href="/informes/informe-gestion">Informe de gestión</a>
+							<a href="/informes/estados-financieros">Estados financieros</a>
+							<a href="/informes/dictamen-revisoria">Dictamen Revisoría fiscal</a>
+							<a href="/informes/acta-asamblea">Acta asamblea</a>
+							<a href="/informes/registro-esald">Actualización registros ESALD</a>
+							<a href="/informes/declaracion-renta">Declaración de renta</a>
+							<a href="/informes/memoria-economica">Memoria económica</a>
+							<a href="/informes/certificado-antecedentes">Certificado de antecedentes</a>
+							<a href="/informes/certificado-renumeracion">Certificado de renumeración directivos</a>
 						</div>
 					</div>
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2024</a>
 						<div class="submenu-content">
-							<a href="/informes/informe-gestion-2024">Informe de gestión</a>
-							<a href="/informes/estados-financieros-2024">Estados financieros</a>
-							<a href="/informes/dictamen-revosoria-2024">Dictamen Revisoría fiscal</a>
-							<a href="/informes/acta-asamblea-2024">Acta asamblea</a>
-							<a href="/informes/registro-esald-2024">Actualización registros ESALD</a>
-							<a href="/informes/declaracion-renta-2024">Declaración de renta</a>
-							<a href="/informes/memoria-economica-2024">Memoria económica</a>
-							<a href="/informes/certificado-antecedentes-2024">Certificado de antecedentes</a>
-							<a href="/informes/certificado-renumeracion-2024">Certificado de renumeración directivos</a>
+							<a href="/informes/2024/informe-gestion">Informe de gestión</a>
+							<a href="/informes/2024/estados-financieros">Estados financieros</a>
+							<a href="/informes/2024/dictamen-revisoria">Dictamen Revisoría fiscal</a>
+							<a href="/informes/2024/acta-asamblea">Acta asamblea</a>
+							<a href="/informes/2024/registro-esald">Actualización registros ESALD</a>
+							<a href="/informes/2024/declaracion-renta">Declaración de renta</a>
+							<a href="/informes/2024/memoria-economica">Memoria económica</a>
+							<a href="/informes/2024/certificado-antecedentes">Certificado de antecedentes</a>
+							<a href="/informes/2024/certificado-renumeracion">Certificado de renumeración directivos</a>
 						</div>
 					</div>
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2023</a>
 						<div class="submenu-content">
-							<a href="/informes/informe-gestion-2023">Informe de gestión</a>
-							<a href="/informes/estados-financieros-2023">Estados financieros</a>
-							<a href="/informes/dictamen-revosoria-2023">Dictamen Revisoría fiscal</a>
-							<a href="/informes/acta-asamblea-2023">Acta asamblea</a>
-							<a href="/informes/registro-esald-2023">Actualización registros ESALD</a>
-							<a href="/informes/declaracion-renta-2023">Declaración de renta</a>
-							<a href="/informes/memoria-economica-2023">Memoria económica</a>
-							<a href="/informes/certificado-antecedentes-2023">Certificado de antecedentes</a>
-							<a href="/informes/certificado-renumeracion-2023">Certificado de renumeración directivos</a>
+							<a href="/informes/2023/informe-gestion">Informe de gestión</a>
+							<a href="/informes/2023/estados-financieros">Estados financieros</a>
+							<a href="/informes/2023/dictamen-revisoria">Dictamen Revisoría fiscal</a>
+							<a href="/informes/2023/acta-asamblea">Acta asamblea</a>
+							<a href="/informes/2023/registro-esald">Actualización registros ESALD</a>
+							<a href="/informes/2023/declaracion-renta">Declaración de renta</a>
+							<a href="/informes/2023/memoria-economica">Memoria económica</a>
+							<a href="/informes/2023/certificado-antecedentes">Certificado de antecedentes</a>
+							<a href="/informes/2023/certificado-renumeracion">Certificado de renumeración directivos</a>
 						</div>
 					</div>
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2022</a>
 						<div class="submenu-content">
-							<a href="/informes/informe-gestion-2022">Informe de gestión</a>
-							<a href="/informes/estados-financieros-2022">Estados financieros</a>
-							<a href="/informes/dictamen-revosoria-2022">Dictamen Revisoría fiscal</a>
-							<a href="/informes/acta-asamblea-2022">Acta asamblea</a>
-							<a href="/informes/registro-esald-2022">Actualización registros ESALD</a>
-							<a href="/informes/declaracion-renta-2022">Declaración de renta</a>
-							<a href="/informes/memoria-economica-2022">Memoria económica</a>
-							<a href="/informes/certificado-antecedentes-2022">Certificado de antecedentes</a>
-							<a href="/informes/certificado-renumeracion-2022">Certificado de renumeración directivos</a>
+							<a href="/informes/2022/informe-gestion">Informe de gestión</a>
+							<a href="/informes/2022/estados-financieros">Estados financieros</a>
+							<a href="/informes/2022/dictamen-revisoria">Dictamen Revisoría fiscal</a>
+							<a href="/informes/2022/acta-asamblea">Acta asamblea</a>
+							<a href="/informes/2022/registro-esald">Actualización registros ESALD</a>
+							<a href="/informes/2022/declaracion-renta">Declaración de renta</a>
+							<a href="/informes/2022/memoria-economica">Memoria económica</a>
+							<a href="/informes/2022/certificado-antecedentes">Certificado de antecedentes</a>
+							<a href="/informes/2022/certificado-renumeracion">Certificado de renumeración directivos</a>
 						</div>
 					</div>
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2021</a>
 						<div class="submenu-content">
 							<a href="/informes/2021/informe-gestion">Informe de gestión</a>
-							<a href="/informes/2021/estados-financiero">Estados financieros</a>
-							<a href="/informes/2021/dictamen-revosoria">Dictamen Revisoría fiscal</a>
+							<a href="/informes/2021/estados-financieros">Estados financieros</a>
+							<a href="/informes/2021/dictamen-revisoria">Dictamen Revisoría fiscal</a>
 							<a href="/informes/2021/acta-asamblea">Acta asamblea</a>
 							<a href="/informes/2021/registro-esald">Actualización registros ESALD</a>
 							<a href="/informes/2021/declaracion-renta">Declaración de renta</a>
@@ -129,48 +134,78 @@ import LogoAlagroSinFondo from '../../assets/icons/logoEmpresa.png';
 			</div>
 		</div>
 		<div class="dropdown">
-			<a href="/productos/la-lola" class="dropdown-toggle">Productos</a>
+			<a href="#" class="dropdown-toggle">Productos</a>
 			<div class="dropdown-content">
-				<div class="dropdown-column">
+				
+				<div class="dropdown-column lola-bg">
 					<a href="/productos/la-lola">
-						<img src={LogoLaLola.src} alt="La Lola"/>
+						<img src={LogoLaLolaBlanco.src} alt="La Lola" />
 					</a>
-					<a href="#" style="color: var(--lalola-color);">Cacao</a>
-					<a href="#" style="color: var(--lalola-color);">Leche en polvo entera</a>
-					<a href="#" style="color: var(--lalola-color);">Lechenela</a>
-					<a href="#" style="color: var(--lalola-color);">Panela en polvo</a>
+
+					<div class="productos-lista">
+						{listaProductosLaLola.map((producto:any) => (
+						<a href={`/productos/la-lola/${producto.id}`}>
+							{producto.name}
+						</a>
+						))}
+					</div>
 				</div>
-				<div class="dropdown-column">
-					
-					<img src={LogoAlagroSinFondo.src} alt="Almacen"/>
-					<a href="#" style="color: var(--secondary-dark);">Producto 1</a>
-					<a href="#" style="color: var(--secondary-dark);">Producto 2</a>
-					<a href="#" style="color: var(--secondary-dark);">Producto 3</a>
+
+				<div class="dropdown-column almacen-bg">
+					<a href="/productos/almacen">
+						<img src={LogoAlagroSinFondo.src} alt="Almacen Agropecuario" />
+					</a>
+
+					<div class="productos-lista">
+						{listaProductosAlmacen.map((producto:any) => (
+						<a href={`/productos/almacen/${producto.id}`}>
+							{producto.name}
+						</a>
+						))}
+					</div>
 				</div>
-				<div class="dropdown-column">
+
+				<div class="dropdown-column larueda-bg">
 					<a href="/productos/la-rueda">
-						<img src={LogoLaRueda.src} alt="La Rueda"/>
+						<img src={LogoLaRueda.src} alt="La Rueda" />
 					</a>
-					<a href="#" style="color: var(--larueda-color);">Queso madurado</a>
-					<a href="#" style="color: var(--larueda-color);">Queso semi maduro</a>
-					<a href="#" style="color: var(--larueda-color);">Queso tomillo</a>
-					<a href="#" style="color: var(--larueda-color);">Queso truja de Italia</a>
-					<a href="#" style="color: var(--larueda-color);">Queso jalapeño</a>
-					<a href="#" style="color: var(--larueda-color);">Queso pimienta putumayo</a>
+
+					<div class="productos-lista">
+						{listaProductosLaRueda.map((producto:any) => (
+						<a href={`/productos/la-rueda/${producto.id}`}>
+							{producto.name}
+						</a>
+						))}
+					</div>
 				</div>
+
 			</div>
 		</div>
-		<a href="#">Gestión social</a>
+		<div class="dropdown">
+			<a href="#" class="dropdown-toggle">Gestión social</a>
+			<div class="dropdown-content">
+				<div class="dropdown-column">
+					<a href="/gestion/educativa" class="dropdown-title">Fondo de educación</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="/gestion/solidaridad" class="dropdown-title">Fondo de solidaridad</a>
+				</div>
+				<div class="dropdown-column">
+					<a href="/gestion/proyectos" class="dropdown-title">Proyectos</a>
+				</div>
+			</div>
+		</div>		
 		
-		
-		<a href="#">Acopios de leche</a>
-		<a href="#">PQRS</a>
+	
+		<a href="https://appalagro.com" target="_blank" rel="noopener noreferrer">
+			Acopios de leche
+		</a>
+		<a href="/pqrsf">PQRSF</a>
 	</nav>
 
 
 	<div class="header-right">
-        <img src={LogoLaRueda.src} alt="La Rueda" class="logo" />
-        <img src={LogoAlagro.src} alt="Alagro" class="logo" />
+        <img src={LogoSlogan.src} alt="La Rueda" class="logo" />
 	</div>
 </header>
 

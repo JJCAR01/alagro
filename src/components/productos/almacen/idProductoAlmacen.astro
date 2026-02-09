@@ -1,0 +1,48 @@
+---
+import '../idProducto.css';
+import { listaProductosAlmacen } from '../../../data/productosAlmacen';
+
+export function getStaticPaths() {
+  return listaProductosAlmacen.map((producto) => ({
+    params: { id: producto.id.toString() },
+    props: { producto }
+  }));
+}
+const { producto } = Astro.props;
+---
+
+
+<main class="container producto-detalle">
+    <a href="/productos/almacen" class="btn-volver">← Volver a productos</a>
+
+    <div class="detalle-wrapper">
+      <div class="detalle-imagen">
+        <img src={producto.img} alt={producto.name} class="producto-img-grande" />
+      </div>
+
+      <div class="detalle-info">
+        <h1 class="detalle-titulo">{producto.name}</h1>
+        
+        <p class="detalle-descripcion">{producto.longDesc}</p>
+
+
+        <div class="detalle-meta">
+          <p><strong>Marca:</strong> Almacén agropecuario</p>
+          <p><strong>Descripción:</strong> {producto.desc}</p>
+
+        </div>
+      </div>
+    </div>
+
+    <section class="productos-relacionados">
+      <h2>Otros productos del Almacen</h2>
+      <div class="grid-relacionados">
+        {listaProductosAlmacen.map(prod => (
+          <a href={`/productos/almacen/${prod.id}`} class={`card-relacionado ${prod.id === producto.id ? 'activo' : ''}`}>
+            <img src={prod.img} alt={prod.name} />
+            <p>{prod.name}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+</main>

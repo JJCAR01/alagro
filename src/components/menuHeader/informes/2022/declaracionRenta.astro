@@ -1,0 +1,28 @@
+---
+import Sidebar from '../../../sidebar/sidebar.astro';
+import '../../menuHeader.css';
+---
+
+<div class="page-container">
+    <Sidebar active="informes" />
+    
+    <main class="content">
+        <section>
+            <h2>Declaración de renta 2022</h2>
+            <div class="download-section">
+                <div class="download-card">
+                    <div class="download-icon pdf-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                        </svg>
+                    </div>
+                    <div class="download-info">
+                        <h3>Descargar Declaración de renta 2022</h3>
+                        <p>Documento oficial en PDF</p>
+                    </div>
+                    <a href="/documents/2022/declaracion_renta_2022.pdf" download class="download-btn" target="_blank">Descargar</a>
+                </div>
+            </div>
+            
+    </main>
+</div>

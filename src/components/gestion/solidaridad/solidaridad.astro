@@ -1,0 +1,44 @@
+---
+import '../gestion.css';
+
+import { gestionSolidaria } from '../../../data/gestionSolidaria.js';
+---
+
+<main class="container productos-page">
+
+  <section class="productos-grid">
+    {gestionSolidaria.map((gestion:any) => (
+      <article class="producto-card">
+        <img src={gestion.img} alt={gestion.name} class="producto-card-img" />
+        <h3 class="producto-card-title">{gestion.name}</h3>
+        <h5>{gestion.longDesc}</h5>
+
+        <div class="producto-card-desc">
+          {gestion.desc.map((parrafo: string) => (
+            <p>{parrafo}</p>
+          ))}
+        </div>
+
+
+        <button class="producto-card-link ver-mas">
+          Ver más
+        </button>
+      </article>
+    ))}
+  </section>
+
+</main>
+
+<script>
+  document.addEventListener('click', (e:any) => {
+    const btn = e.target.closest('.ver-mas');
+    if (!btn) return;
+
+    const card = btn.closest('.producto-card');
+    card.classList.toggle('expanded');
+
+    btn.textContent = card.classList.contains('expanded')
+      ? 'Ver menos'
+      : 'Ver más';
+  });
+</script>

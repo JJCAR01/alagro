@@ -1,0 +1,11 @@
+.deberes-list
+.derechos-list {
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.content li {
+    margin-bottom: 0.5rem;
+    text-align: justify;
+
+}

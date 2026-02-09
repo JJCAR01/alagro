@@ -1,0 +1,28 @@
+---
+import '../producto.css';
+
+import { listaProductosAlmacen } from '../../../data/productosAlmacen.js';
+---
+
+
+  <main class="container productos-page">
+      <h1>Productos — Almacén</h1>
+      <p>Todo lo que tu finca necesita, en un solo lugar, con el respaldo de tu cooperativa.</p>
+
+      <p>En <strong>ALAGRO</strong> acompañamos el esfuerzo diario del campo con soluciones reales. 
+        Nuestro Almacén Agropecuario ofrece insumos de calidad, asesoría cercana y precios solidarios, 
+        pensados para que produzcas más, mejor y con tranquilidad.</p>
+
+  
+
+    <section class="productos-grid">
+      {listaProductosAlmacen.map((producto:any) => (
+        <article class="producto-card">
+          <img src={producto.img} alt={producto.name} class="producto-card-img" />
+          <h3 class="producto-card-title">{producto.name}</h3>
+          <p class="producto-card-desc">{producto.longDesc}</p>
+          <a class="producto-card-link" href={producto.url}>Ver producto</a>
+        </article>
+      ))}
+    </section>
+  </main>

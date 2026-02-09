@@ -1,12 +1,7 @@
 ---
 import '../producto.css';
 
-const productos = [
-  { id: 1, name: 'Cacao', img: '/la-lola/cacao.png', desc: 'Cacao en polvo 125g', longDesc: 'Cacao en polvo puro 100% natural, ideal para bebidas calientes, postres y repostería. Producto de alta calidad, sin aditivos. Peso: 125g', url: '/productos/la-lola/1' },
-  { id: 2, name: 'Lechenela', img: '/la-lola/lechenela.png', desc: 'Lechenela 250g', longDesc: 'Lechenela tradicional colombiana, bebida en polvo con leche y malta. Preparación rápida y deliciosa para toda la familia. Peso: 250g', url: '/productos/la-lola/2' },
-  { id: 3, name: 'Panela en polvo', img: '/la-lola/panela.png', desc: 'Panela en polvo 250g', longDesc: 'Panela en polvo deshidratada, endulzante natural 100% puro. Perfecta para bebidas, postres y recetas. Conserva todos los nutrientes. Peso: 250g', url: '/productos/la-lola/3' },
-  { id: 4, name: 'Leche en polvo Entera', img: '/la-lola/leche.png', desc: 'Leche en polvo entera 900g', longDesc: 'Leche en polvo entera, alta en calcio y nutrientes. Ideal para el desayuno familiar, postres y bebidas. Presentación: 900g', url: '/productos/la-lola/4' }
-];
+import { listaProductosLaLola } from '../../../data/productosLaLola.js';
 ---
 
 
@@ -15,11 +10,11 @@ const productos = [
     <p>Listado de productos disponibles de la marca La Lola.</p>
 
     <section class="productos-grid">
-      {productos.map(producto => (
+      {listaProductosLaLola.map(producto => (
         <article class="producto-card">
           <img src={producto.img} alt={producto.name} class="producto-card-img" />
           <h3 class="producto-card-title">{producto.name}</h3>
-          <p class="producto-card-desc">{producto.desc}</p>
+          <p class="producto-card-desc">{producto.longDesc}</p>
           <a class="producto-card-link" href={producto.url}>Ver producto</a>
         </article>
       ))}
