@@ -1,7 +1,7 @@
 export const gestionEducativa = [
-    {   id: 1, name: 'KITS ESCOLARES', 
-        img: '/cards/productores.png', 
-        longDesc: '“Educación que nace del campo.”' , 
+    {   id: 1, name: 'Entrega de kits escolares para los asociados de Alagro.', 
+        img: '/images/gestion/kits_escolares.jpeg', 
+        longDesc: '“Educación que nace desde el campo de nuestros campesinos.”' , 
         desc: [
             'En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO creemos que apoyar el campo también es apoyar los sueños de sus hijos.',
             'Por eso, a través del Fondo de Educación, realizamos cada año la entrega de kits escolares para los hijos y nietos de nuestros asociados, brindándoles herramientas básicas para su educación y acompañando a las familias en el inicio del calendario académico.',
@@ -9,8 +9,8 @@ export const gestionEducativa = [
             'Este programa refleja lo que somos como cooperativa: una comunidad que no solo piensa en producir, sino en el bienestar integral de sus familias.'
         ]
     },
-    {   id: 2, name: 'SUBSIDIO DE TRANSPORTE ESCOLAR – APOYO A LAS FAMILIAS RURALES', 
-        img: '/almacen/cacao.png', 
+    {   id: 2, name: 'Subsidio de transporte escolar – Apoyo a las familias rurales.', 
+        img: '/images/gestion/subsidio.jpeg', 
         longDesc: '“El camino a la escuela también lo recorremos contigo.”' , 
         desc: [
             'En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO entendemos que educar a los hijos también implica grandes esfuerzos, especialmente cuando las distancias y el transporte se convierten en un costo adicional para las familias del campo.',
@@ -19,9 +19,9 @@ export const gestionEducativa = [
             'Más que un subsidio, es una mano amiga que acompaña a nuestras familias rurales y reafirma que en ALAGRO crecemos juntos, dentro y fuera de la finca.'
         ]
     },
-    {   id: 3, name: 'FORMACIÓN Y DESARROLLO DEL TALENTO HUMANO', 
-        img: '/almacen/cacao.png', 
-        longDesc: '“Un mejor equipo, un mejor servicio.”' , 
+    {   id: 3, name: 'Capacitación para el talento humano de nuestros empleados y asociados.', 
+        img: '/images/gestion/talento_humano.jpeg', 
+        longDesc: '“Un mejor equipo, un mejor servicio para todos.”' , 
         desc: [
             'En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO creemos que el crecimiento de la cooperativa comienza por el crecimiento de las personas.',
             'Por eso impulsamos de manera permanente cursos, capacitaciones y espacios de formación para nuestros colaboradores, fortaleciendo sus habilidades técnicas, administrativas y humanas. Buscamos que cada integrante del equipo esté mejor preparado para servir a los productores, optimizar los procesos y brindar un acompañamiento más cercano y profesional en cada área.',
@@ -29,9 +29,9 @@ export const gestionEducativa = [
             'Formarnos juntos nos permite seguir construyendo un servicio más fuerte, más solidario y más competitivo para el campo.'
         ]
     },
-    {   id: 4, name: 'BACHILLERATO EN CASA – EDUCACIÓN QUE TRANSFORMA VIDAS', 
-        img: '/almacen/cacao.png', 
-        longDesc: '' , 
+    {   id: 4, name: 'Bachillerato en Casa – Educación para nuestros productores.', 
+        img: '/images/gestion/bachillerato.jpeg', 
+        longDesc: '"Una meta educativa que trasciende generaciones."' , 
         desc: [
             'En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO creemos que nunca es tarde para aprender y cumplir sueños.',
             'Por eso impulsamos el programa Bachillerato en Casa, en alianza con Prepárate, brindando a nuestros productores la oportunidad de terminar sus estudios de secundaria sin dejar sus labores en la finca.',

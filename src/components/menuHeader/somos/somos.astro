@@ -8,7 +8,7 @@ import './somos.css';
     
     <main class="content">
         <section id="historia">
-            <img class="image" src="/cards/historia.png" alt="Alianza para el Agro" />
+            <img class="image" src="/images/cards/historia.png" alt="Alianza para el Agro" />
             <h2>¿Quiénes somos?</h2>
             <p>
                 En el año 2015 se inicia con la intención de conformar una alianza lechera integrada por 3 
@@ -86,3 +86,22 @@ import './somos.css';
         </section>
     </main>
 </div>
+
+<script>
+	function scrollToHash() {
+		if (window.location.hash) {
+			const el = document.querySelector(window.location.hash);
+			if (el) {
+				setTimeout(() => {
+					el.scrollIntoView({ behavior: 'smooth' });
+				}, 100); // pequeño delay para asegurar render
+			}
+		}
+	}
+
+	// carga inicial
+	scrollToHash();
+
+	// navegación en Astro
+	document.addEventListener('astro:page-load', scrollToHash);
+</script>

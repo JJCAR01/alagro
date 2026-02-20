@@ -1,8 +1,26 @@
-.container.productos-page {
+.gestiones-bg {
+    position: relative;
+}
+
+/* 🔥 FONDO DETRÁS */
+.gestiones-bg::before {
+    content: "";
+    position: fixed; /* 👈 clave */
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+    background: url('/images/gestion/fondo.jpeg') center/cover no-repeat;
+    z-index: -1; /* 👈 detrás de TODO */
+}
+
+
+/* 🔥 CONTENIDO ENCIMA */
+.container.gestiones-page {
+    position: relative; /* 👈 clave */
+    z-index: 1;
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -10,12 +28,11 @@
     margin-top: 1.25rem;
 }
 
-.productos-grid p
-{
-    color: var(--color-bg   );
-    font-size: 1.05rem;
-    margin-top: 0.5rem;
+.header-productos p, h1 {
+    color: var(--color-white);
 }
+
+
 .producto-card {
     background: var(--color-white);
     border-radius: 12px;
@@ -28,21 +45,8 @@
     transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s ease, background-color 0.2s ease, border-color 0.18s ease;
     will-change: transform;
 }
-.producto-card {
-  transition:
-    transform 0.28s cubic-bezier(.2,.9,.2,1),
-    box-shadow 0.28s ease,
-    grid-column 0.3s ease;
-}
 
 
-.producto-card:hover,
-.producto-card:focus-within {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 22px 50px rgba(8, 30, 56, 0.16);
-    /* highlight border on hover to create subtle emphasis */
-    border-color: var(--color-secondary);
-}
 
 .producto-card:active {
     transform: translateY(-4px) scale(0.995);
@@ -50,45 +54,50 @@
 
 .producto-card-img {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: contain;
     margin: 0 auto 0.6rem auto;
     transition: transform 0.35s ease, filter 0.35s ease;
+    border-radius: 5%;
 }
+
+.producto-card-title{
+    text-align: justify;
+    color: var(--color-primary);
+}
+
 
 .producto-card:hover .producto-card-img {
     transform: translateY(-6px) scale(1.06);
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.09));
 }
 
-.producto-card-title {
-    margin: 0.25rem 0;
-    color: var(--lalola-color);
-    font-weight: 700;
-}
-
 .producto-card-desc {
-    font-size: 0.92rem;
-    color: var(--color-secondary);
     margin: 0;
     flex: 1 0 auto;
 }
 
+.producto-card-desc p{
+    font-size: 15px;
+    text-align: justify;
+}
+
 .producto-card-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.45rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.55rem 1.2rem;
     border-radius: 8px;
+
     background: var(--color-secondary);
     color: var(--color-white);
     text-decoration: none;
-    transition: background-color 0.18s ease, transform 0.18s ease;
-}
+    font-size: 0.9rem;
+    font-weight: 600;
 
-.producto-card-link:hover,
-.producto-card-link:focus {
-    background: color-mix(in srgb, var(--color-secondary) 82%, black 6%);
-    transform: translateY(-2px);
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 16px rgba(255, 255, 255);
 }
 
 /* Small badge example in top-right corner */

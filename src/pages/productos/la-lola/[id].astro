@@ -1,7 +1,6 @@
 ---
 import Layout from '../../../layouts/base.astro';
-import Header from '../../../components/header/header.astro';
-import Footer from '../../../components/footer/footer.astro';
+import Header from '../../../components/header/headerLaLola.astro';
 import IdProductoLaLola from '@components/productos/lalola/idProductoLaLola.astro';
 import { listaProductosLaLola } from '../../../data/productosLaLola';
 
@@ -18,5 +17,4 @@ const { producto } = Astro.props;
 <Layout>
   <Header />
   <IdProductoLaLola producto={producto} />
-  <Footer />
 </Layout>

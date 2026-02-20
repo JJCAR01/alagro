@@ -4,29 +4,31 @@ import '../gestion.css';
 import { gestionEducativa } from '../../../data/gestionEducativa.js';
 ---
 
-<main class="container productos-page">
+<div class="gestiones-bg">
+  <main class="container gestiones-page">
 
-  <section class="productos-grid">
-    {gestionEducativa.map((gestion:any) => (
-      <article class="producto-card">
-        <img src={gestion.img} alt={gestion.name} class="producto-card-img" />
-        <h3 class="producto-card-title">{gestion.name}</h3>
-        <h5>{gestion.longDesc}</h5>
+    <section class="productos-grid">
+      {gestionEducativa.map((gestion:any) => (
+        <article class="producto-card">
+          <img src={gestion.img} alt={gestion.name} class="producto-card-img" />
+          <h3 class="producto-card-title">{gestion.name}</h3>
 
-        <div class="producto-card-desc">
-          {gestion.desc.map((parrafo: string) => (
-            <p>{parrafo}</p>
-          ))}
-        </div>
+          <div class="producto-card-desc">
+            {gestion.desc.map((parrafo: string) => (
+              <p>{parrafo}</p>
+            ))}
+          </div>
 
-        <button class="producto-card-link ver-mas">
-          Ver más
-        </button>
-      </article>
-    ))}
-  </section>
+          <button class="producto-card-link ver-mas">
+            Ver más
+          </button>
+        </article>
+      ))}
+    </section>
 
-</main>
+  </main>
+
+</div>
 
 <script>
   document.addEventListener('click', (e:any) => {

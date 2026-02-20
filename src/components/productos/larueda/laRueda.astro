@@ -1,22 +1,33 @@
 ---
 import '../producto.css';
+import '../larueda/laRueda.css';
+
+import LogoRueda from '../../../assets/icons/rueda_blanco.png';
 
 import { listaProductosLaRueda } from '../../../data/productosLaRueda.js';
 ---
 
+  <div class="productos-bg">
+    <main class="container productos-page">
+      <div class="header-productos">
+          <div>
+              <h1>Productos — La Rueda</h1>
+              <p>Listado de productos disponibles de la marca La Rueda.</p>
+          </div>
 
-  <main class="container productos-page">
-    <h1>Productos — La Rueda</h1>
-    <p>Listado de productos disponibles de la marca La Rueda.</p>
+          <img src={LogoRueda.src} alt="La Rueda" class="logo" />
+      </div>
 
-    <section class="productos-grid">
-      {listaProductosLaRueda.map(producto => (
-        <article class="producto-card">
-          <img src={producto.img} alt={producto.name} class="producto-card-img" />
-          <h3 class="producto-card-title">{producto.name}</h3>
-          <p class="producto-card-desc">{producto.longDesc}</p>
-          <a class="producto-card-link" href={producto.url}>Ver producto</a>
-        </article>
-      ))}
-    </section>
-  </main>
+      
+      <section class="productos-grid">
+        {listaProductosLaRueda.map(producto => (
+          <article class="producto-card">
+            <img src={producto.img} alt={producto.name} class="producto-card-img" />
+            <h3 class="producto-card-title">{producto.name}</h3>
+            <p class="producto-card-desc">{producto.longDesc}</p>
+            <a class="producto-card-link" href={producto.url}>Ver producto</a>
+          </article>
+        ))}
+      </section>
+    </main>
+  </div>

@@ -1,22 +1,34 @@
 ---
 import '../producto.css';
+import '../lalola/laLola.css';
+
+import LogoLaLola from '../../../assets/icons/lola_blanco.png';
+
 
 import { listaProductosLaLola } from '../../../data/productosLaLola.js';
 ---
 
+  <div class="productos-bg">
+    <main class="container productos-page">
 
-  <main class="container productos-page">
-    <h1>Productos — La Lola</h1>
-    <p>Listado de productos disponibles de la marca La Lola.</p>
+      <div class="header-productos">
+          <div>
+              <h1>Productos — La Lola</h1>
+              <p>Listado de productos disponibles de la marca La Lola.</p>
+          </div>
 
-    <section class="productos-grid">
-      {listaProductosLaLola.map(producto => (
-        <article class="producto-card">
-          <img src={producto.img} alt={producto.name} class="producto-card-img" />
-          <h3 class="producto-card-title">{producto.name}</h3>
-          <p class="producto-card-desc">{producto.longDesc}</p>
-          <a class="producto-card-link" href={producto.url}>Ver producto</a>
-        </article>
-      ))}
-    </section>
-  </main>
+          <img src={LogoLaLola.src} alt="La Lola" class="logo" />
+      </div>
+
+      <section class="productos-grid">
+        {listaProductosLaLola.map(producto => (
+          <article class="producto-card">
+            <img src={producto.img} alt={producto.name} class="producto-card-img" />
+            <h3 class="producto-card-title">{producto.name}</h3>
+            <p class="producto-card-desc">{producto.longDesc}</p>
+            <a class="producto-card-link" href={producto.url}>Ver producto</a>
+          </article>
+        ))}
+      </section>
+    </main>
+  </div>

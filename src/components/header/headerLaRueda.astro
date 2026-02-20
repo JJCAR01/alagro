@@ -51,12 +51,12 @@ import { listaProductosAlmacen } from '../../data/productosAlmacen';
 					<a href="#" class="dropdown-title">Asociados</a>
 					<a href="/asociados#deberes">Deberes</a>
 					<a href="/asociados#derechos">Derechos</a>
-					<a href="/formatos">Formatos</a>
+					<a href="/asociados/formatos">Formatos</a>
 				</div>
 				<div class="dropdown-column">
 					<a href="#" class="dropdown-title">Infomes y balances</a>
 					<a href="informes/acta-constitucion">Acta de constitución</a>
-					<div class="submenu-wrapper">
+					<!-- <div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2025</a>
 						<div class="submenu-content">
 							<a href="/informes/informe-gestion">Informe de gestión</a>
@@ -69,7 +69,7 @@ import { listaProductosAlmacen } from '../../data/productosAlmacen';
 							<a href="/informes/certificado-antecedentes">Certificado de antecedentes</a>
 							<a href="/informes/certificado-renumeracion">Certificado de renumeración directivos</a>
 						</div>
-					</div>
+					</div> -->
 					<div class="submenu-wrapper">
 						<a class="submenu-toggle">Año 2024</a>
 						<div class="submenu-content">
@@ -128,7 +128,7 @@ import { listaProductosAlmacen } from '../../data/productosAlmacen';
 					</div>				
 				</div>
 				<div class="dropdown-column">
-					<a href="#" class="dropdown-title">Trabaja con nosotros</a>
+					<a href="/trabaja-con-nosotros" class="dropdown-title">Trabaja con nosotros</a>
 				</div>
 			</div>
 		</div>
@@ -207,66 +207,59 @@ import { listaProductosAlmacen } from '../../data/productosAlmacen';
 	</div>
 </header>
 
-<script>
-	const btn = document.querySelector('.menu-toggle');
-	const menu = document.querySelector('#menu');
-	const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-	const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-	if (btn && menu) {
-		btn.addEventListener('click', () => {
-			menu.classList.toggle('open');
-			btn.classList.toggle('open');
+<script>
+	function initMenu() {
+		const btn = document.querySelector<HTMLElement>('.menu-toggle');
+		const menu = document.querySelector<HTMLElement>('#menu');
+		const dropdownToggles = document.querySelectorAll<HTMLElement>('.dropdown-toggle');
+		const submenuToggles = document.querySelectorAll<HTMLElement>('.submenu-toggle');
+
+
+		if (btn && menu) {
+			btn.onclick = () => {
+				menu.classList.toggle('open');
+				btn.classList.toggle('open');
+			};
+
+			const links = menu.querySelectorAll('a');
+
+			links.forEach(link => {
+				link.onclick = () => {
+					menu.classList.remove('open');
+					btn.classList.remove('open');
+				};
+			});
+		}
+		submenuToggles.forEach(toggle => {
+			toggle.onclick = (e) => {
+				if (window.innerWidth <= 768) {
+					e.preventDefault();
+					const wrapper = toggle.closest('.submenu-wrapper');
+					wrapper?.classList.toggle('open');
+				}
+			};
+		});
+
+		dropdownToggles.forEach(toggle => {
+			toggle.onclick = (e) => {
+				if (window.innerWidth <= 768) {
+					e.preventDefault();
+					const dropdown = toggle.closest('.dropdown');
+					dropdown?.classList.toggle('open');
+				}
+			};
 		});
 	}
 
-	// Manejo del submenu - solo click en móvil
-	submenuToggles.forEach(toggle => {
-		toggle.addEventListener('click', (e) => {
-			// Solo en móvil (max-width: 768px)
-			if (window.innerWidth <= 768) {
-				e.preventDefault();
-				const submenuWrapper = toggle.closest('.submenu-wrapper');
-				submenuWrapper?.classList.toggle('open');
-			}
-		});
-	});
+	// ✅ carga inicial
+	initMenu();
 
-	// Cerrar submenu al hacer click fuera en móvil
-	document.addEventListener('click', (e) => {
-		if (window.innerWidth <= 768) {
-			submenuToggles.forEach(toggle => {
-				const submenuWrapper = toggle.closest('.submenu-wrapper');
-				if (submenuWrapper && e.target instanceof Node && !submenuWrapper.contains(e.target)) {
-					submenuWrapper.classList.remove('open');
-				}
-			});
-		}
-	});
-
-	// Manejo del dropdown en móvil
-	dropdownToggles.forEach(toggle => {
-		toggle.addEventListener('click', (e) => {
-			// Solo en móvil (max-width: 768px)
-			if (window.innerWidth <= 768) {
-				e.preventDefault();
-				const dropdown = toggle.closest('.dropdown');
-				dropdown?.classList.toggle('open');
-			}
-		});
-	});
-
-	// Cerrar dropdown al hacer click fuera
-	document.addEventListener('click', (e) => {
-		if (window.innerWidth <= 768) {
-			dropdownToggles.forEach(toggle => {
-				const dropdown = toggle.closest('.dropdown');
-				if (dropdown && e.target instanceof Node && !dropdown.contains(e.target)) {
-					dropdown.classList.remove('open');
-				}
-			});
-		}
-	});
+	// ✅ cuando Astro cambia de página
+	document.addEventListener('astro:page-load', initMenu);
 </script>
+
+
+
 
 

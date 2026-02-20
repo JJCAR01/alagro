@@ -31,7 +31,7 @@
 	height: 55px;
 	width: auto;
 	object-fit: contain;
-	opacity: 0.85;
+	opacity: 1;
 	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -46,7 +46,7 @@
 	height: 50px;
 	width: auto;
 	object-fit: contain;
-	opacity: 0.85;
+	opacity: 1;
 	transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -71,17 +71,9 @@
 /* LINKS */
 .header-center a {
 	font-size: clamp(17px, 1vw, 20px);
-
 	padding: 0.5rem 0.5rem;
 	border-radius: 999px;
-	backdrop-filter: blur(6px);
-	
-	transition:
-		transform 0.25s ease,
-		background-color 0.3s ease,
-		box-shadow 0.3s ease;
 
-	transform-origin: center bottom;
 }
 
 .header-center:hover a {
@@ -275,6 +267,8 @@
 	margin: 0 auto 1rem auto;
 	display: block;
 	transition: transform 0.3s ease;
+	opacity: 1 !important;
+	backdrop-filter: none !important;
 }
 
 .dropdown-column h5 {
@@ -557,9 +551,8 @@
 }
 
 .lola-bg {
-	/*background-image: url('/fondo_azul.png');*/
-	background: var(--lalola-color);
-
+	position: relative;
+	background-image: url('/images/la-lola/fondo_producto_la_lola.jpeg');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
@@ -569,20 +562,31 @@
 	flex-direction: column;
 	gap: 24px;
 	min-height: 420px;
+	overflow: hidden;
+}
+
+.lola-bg::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 0;
 }
 
 .lola-bg .productos-lista a {
-  color: white;
+	backdrop-filter: none ;
+	background: transparent ;
+	border-radius: 0 ;
+	box-shadow: none ;
+	color: var(--color-white);
 }
 
-.lola-bg .productos-lista a:hover {
-  color: white;
-  text-decoration: underline; /* opcional */
+.lola-bg .productos-lista a:hover::after {
+  	width: 100%;
 }
+
 
 .almacen-bg {
-	/*background-image: url('/fondo_azul.png');*/
-	background: var(--color-secondary);
+	background-image: url('/images/almacen/fondo_producto_almacen.jpeg');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
@@ -595,7 +599,11 @@
 }
 
 .almacen-bg .productos-lista a {
-  color: white;
+  	backdrop-filter: none ;
+	background: transparent ;
+	border-radius: 0 ;
+	box-shadow: none ;
+	color: var(--color-white);
 }
 
 .almacen-bg .productos-lista a:hover {
@@ -604,8 +612,7 @@
 }
 
 .larueda-bg {
-	/*background-image: url('/fondo_azul.png');*/
-	background: var(--larueda-color--dark);
+	background-image: url('/images/la-rueda/fondo_producto_la_rueda.jpeg');
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
@@ -618,11 +625,15 @@
 }
 
 .larueda-bg .productos-lista a {
-  color: white;
+  	backdrop-filter: none ;
+	background: transparent ;
+	border-radius: 0 ;
+	box-shadow: none ;
+	color: var(--color-white);
 }
 
 .larueda-bg .productos-lista a:hover {
-  color: white;
-  text-decoration: underline; /* opcional */
+	color: white;
+	text-decoration: underline; /* opcional */
 }
 

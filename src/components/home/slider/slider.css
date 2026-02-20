@@ -1,9 +1,12 @@
 .hero-slider {
 	position: relative;
-	width: 85%;
+	width: min(85%, 1400px);
 	height: 60vh;
-	margin: 10px auto;
-	z-index: 0;
+	margin: 10px auto;	
+}
+
+.hero-slider {
+	width: min(85%, 1400px);
 }
 
 .slides {

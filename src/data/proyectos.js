@@ -1,6 +1,6 @@
 export const proyectos = [
-    {   id: 1, name: 'RUTA AGROPECUARIA', 
-        img: '/cards/productores.png', 
+    {   id: 1, name: 'Ruta agropecuaria – Insumos y acompañamiento técnico directo en finca.', 
+        img: '/images/gestion/ruta_agropecuaria.jpeg', 
         longDesc: '“MENOS COSTOS, MÁS CAMPO: ALAGRO TE LO LLEVA TODO HASTA TU FINCA.”' , 
         desc: [
             'La Ruta Agropecuaria de Cooperativa Multiactiva Alianza para el Agro – ALAGRO nació pensando en algo muy sencillo pero muy importante: que nuestros productores no tengan que salir de su finca para conseguir lo que necesitan. Nosotros vamos hasta donde están, llevándose insumos, concentrados y acompañamiento técnico, ahorrándoles tiempo, dinero y esfuerzo.',
@@ -8,8 +8,8 @@ export const proyectos = [
             'Más que una entrega, es una forma de decirles: no están solos, su cooperativa camina con ustedes, hasta la puerta de su finca.'
         ]
     },
-    {   id: 2, name: 'MEJORA GENETICA', 
-        img: '/almacen/cacao.png', 
+    {   id: 2, name: 'Mejora Genética – Fortalecimiento para mayor productividad.', 
+        img: '/images/gestion/mejora_genetica.jpeg', 
         longDesc: '“Mejor genética, más producción, más futuro para tu finca.”' , 
         desc: [
             'El Proyecto de Mejora Genética de la Cooperativa Multiactiva Alianza para el Agro – ALAGRO nace del compromiso de fortalecer el futuro de nuestras familias ganaderas, mejorando la calidad del hato, la productividad y la rentabilidad desde el origen: la genética.',
@@ -18,8 +18,8 @@ export const proyectos = [
             'Más que genética, sembramos oportunidades, progreso y bienestar para las nuevas generaciones del campo.'
         ]
     },
-    {   id: 3, name: 'ALIANZAS PRODUCTIVAS', 
-        img: '/almacen/cacao.png', 
+    {   id: 3, name: 'Alianzas Productivas – Fortalecimiento para nuestros productores.', 
+        img: '/images/gestion/alianzas_productivas.jpeg', 
         longDesc: '“Alianzas que fortalecen al productor.”' , 
         desc: [
             'El Proyecto de Alianzas Productivas de la Cooperativa Multiactiva Alianza para el Agro – ALAGRO es el resultado de trabajar unidos por un mismo propósito: que nuestros productores de leche sean más fuertes, más competitivos y más rentables.',
@@ -28,8 +28,8 @@ export const proyectos = [
             'Porque cuando el campo, las instituciones y la cooperativa trabajan juntos, el progreso se multiplica.'
         ]
     },
-    {   id: 4, name: 'PROYECTO DE DIVERSIFICACIÓN PRODUCTIVA – CULTIVO DE MORA', 
-        img: '/almacen/cacao.png', 
+    {   id: 4, name: 'Proyecto de Diversificación Productiva – Cultivo de mora', 
+        img: '/images/gestion/diversificacion.jpeg', 
         longDesc: '' , 
         desc: [
             'El Proyecto de Mora de la Cooperativa Multiactiva Alianza para el Agro – ALAGRO, en alianza con AGROSAVIA, nació como una apuesta por demostrar que el campo tiene más oportunidades de las que imaginamos.',
@@ -38,8 +38,8 @@ export const proyectos = [
             'Porque diversificar también es crecer, innovar y asegurar el futuro de nuestras familias rurales.'
         ]
     },
-    {   id: 5, name: 'PROYECTO DE ENERGÍA SOLAR – TANQUE DE ENFRIAMIENTO ABREO', 
-        img: '/almacen/cacao.png', 
+    {   id: 5, name: 'Proyecto de Energía Solar – Tanque de Enfriamiento Abreo', 
+        img: '/images/gestion/energia_solar.jpeg', 
         longDesc: '“EL SOL TRABAJA POR NUESTROS PRODUCTORES: ENERGÍA LIMPIA, MENOS COSTOS Y MÁS FUTURO.”' , 
         desc: [
             'El Proyecto de Paneles Solares de la Cooperativa Multiactiva Alianza para el Agro – ALAGRO, implementado en el tanque comunitario de Abreo, es una apuesta por un campo más eficiente, rentable y sostenible.',
@@ -48,8 +48,8 @@ export const proyectos = [
             'Porque el sol no solo genera energía: genera ahorro, sostenibilidad y futuro para nuestras familias rurales.'
         ]
     },
-    {   id: 6, name: 'PROYECTO DE FORMACIÓN EMPRESARIAL PARA PRODUCTORES', 
-        img: '/almacen/cacao.png', 
+    {   id: 6, name: 'Proyecto de Formación Empresarial – Capacitación para nuestros productores.', 
+        img: '/images/gestion/formacion_empresarial.jpeg', 
         longDesc: '' , 
         desc: [
             'A través de la convocatoria DSNFT-0001-FEEC-2024, la Cooperativa Multiactiva Alianza para el Agro – ALAGRO y el Servicio Nacional de Aprendizaje – SENA unieron esfuerzos para fortalecer algo fundamental en el campo: el conocimiento.',

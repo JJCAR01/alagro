@@ -48,35 +48,54 @@ import './whatsapp.css';
 
         if (!icon || !label || !popup) return;
 
-        let popupTimer:any;
+        let popupTimer : any;
+        let isOpen = false;
 
+        // ===== HOVER =====
         icon.onmouseenter = () => {
-        label.classList.add('show');
+            if (isOpen) return;
 
-        popupTimer = setTimeout(() => {
-            popup.classList.add('show');
-            icon.classList.add('hidden');
-        }, 1200);
+            label.classList.add('show');
+
+            popupTimer = setTimeout(() => {
+                popup.classList.add('show');
+                icon.classList.add('hidden');
+                isOpen = true;
+            }, 1200);
         };
 
         icon.onmouseleave = () => {
-        clearTimeout(popupTimer);
+            clearTimeout(popupTimer);
         };
 
+        // ===== CLICK (NUEVO) =====
+        icon.onclick = () => {
+            isOpen = !isOpen;
+
+            if (isOpen) {
+                popup.classList.add('show');
+                label.classList.add('show');
+                icon.classList.add('hidden');
+            } else {
+                popup.classList.remove('show');
+                label.classList.remove('show');
+                icon.classList.remove('hidden');
+            }
+        };
+
+        // ===== POPUP EVENTS =====
         popup.onmouseleave = () => {
-        popup.classList.remove('show');
-        label.classList.remove('show');
-        icon.classList.remove('hidden');
+            popup.classList.remove('show');
+            label.classList.remove('show');
+            icon.classList.remove('hidden');
+            isOpen = false;
         };
 
         popup.onmouseenter = () => {
-        clearTimeout(popupTimer);
+            clearTimeout(popupTimer);
         };
     }
 
-    // Carga inicial
     initWhatsapp();
-
-    // Re-activar después de cada navegación Astro
     document.addEventListener('astro:page-load', initWhatsapp);
 </script>

@@ -1,6 +1,6 @@
 export const gestionSolidaria = [
-    {   id: 1, name: 'FONDO SOLIDARIO', 
-        img: '/cards/productores.png', 
+    {   id: 1, name: 'Fondo de Solidaridad – Apoyo a nuestros asociados en momentos difíciles.', 
+        img: '/images/gestion/fondo_solidario.jpeg', 
         longDesc: '“Aquí nadie está solo: la solidaridad es nuestra mayor fortaleza.”' , 
         desc: [
             'Cuando uno necesita, todos respondemos: En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO la solidaridad no es solo un valor, es una acción permanente.',
@@ -9,8 +9,8 @@ export const gestionSolidaria = [
             'Porque creemos que el progreso del campo no se construye individualmente, sino en equipo. Aquí, la solidaridad también produce bienestar.'
         ]
     },
-    {   id: 2, name: 'SEGURO DE VIDA PARA NUESTROS ASOCIADOS – PROTECCIÓN Y TRANQUILIDAD FAMILIAR', 
-        img: '/almacen/cacao.png', 
+    {   id: 2, name: 'Seguro de Vida colectivo – Protección para nuestros productores y sus familias.', 
+        img: '/images/gestion/segura.jpeg', 
         longDesc: '' , 
         desc: [
             'En la Cooperativa Multiactiva Alianza para el Agro – ALAGRO trabajamos cada día por el bienestar de nuestros productores, no solo en lo productivo, sino también en la seguridad y tranquilidad de sus familias.',
