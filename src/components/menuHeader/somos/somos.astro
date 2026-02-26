@@ -88,20 +88,22 @@ import './somos.css';
 </div>
 
 <script>
-	function scrollToHash() {
-		if (window.location.hash) {
-			const el = document.querySelector(window.location.hash);
-			if (el) {
-				setTimeout(() => {
-					el.scrollIntoView({ behavior: 'smooth' });
-				}, 100); // pequeño delay para asegurar render
-			}
-		}
-	}
+	document.addEventListener("click", (e) => {
+        const target = e.target;
 
-	// carga inicial
-	scrollToHash();
+        if (!(target instanceof HTMLElement)) return;
 
-	// navegación en Astro
-	document.addEventListener('astro:page-load', scrollToHash);
+        const link = target.closest("a[href*='#']");
+
+        if (!(link instanceof HTMLAnchorElement)) return;
+
+        const hash = link.hash;
+        const el = document.querySelector(hash);
+
+        if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth" });
+            history.pushState(null, "", hash);
+        }
+    });
 </script>
