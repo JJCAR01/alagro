@@ -61,9 +61,8 @@
     font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     .sidebar {
-        width: 100%;
-        margin-bottom: 2rem;
+        display: none;
     }
 }

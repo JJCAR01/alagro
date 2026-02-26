@@ -30,17 +30,35 @@ import { gestionSolidaria } from '../../../data/gestionSolidaria.js';
   </main>
 </div>
 
-
 <script>
   document.addEventListener('click', (e:any) => {
     const btn = e.target.closest('.ver-mas');
     if (!btn) return;
 
-    const card = btn.closest('.producto-card');
-    card.classList.toggle('expanded');
+    const currentCard = btn.closest('.producto-card');
+    const allCards = document.querySelectorAll('.producto-card');
 
-    btn.textContent = card.classList.contains('expanded')
-      ? 'Ver menos'
-      : 'Ver más';
+    const isExpanded = currentCard.classList.contains('expanded');
+
+    // 🔥 Cerrar todas primero
+    allCards.forEach(card => {
+      card.classList.remove('expanded');
+      const button = card.querySelector('.ver-mas');
+      if (button) button.textContent = 'Ver más';
+    });
+
+    // 🔥 Si NO estaba abierta, abrirla
+    if (!isExpanded) {
+      currentCard.classList.add('expanded');
+      btn.textContent = 'Ver menos';
+
+      // 🔥 Scroll suave hacia la card
+      setTimeout(() => {
+        currentCard.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 150);
+    }
   });
 </script>

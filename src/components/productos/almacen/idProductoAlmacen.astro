@@ -1,5 +1,10 @@
 ---
 import '../idProducto.css';
+import './almacen.css';
+
+
+import LogoAlagro from '../../../assets/icons/alagro_logo_blanco.png';
+
 import { listaProductosAlmacen } from '../../../data/productosAlmacen';
 
 export function getStaticPaths() {
@@ -11,38 +16,40 @@ export function getStaticPaths() {
 const { producto } = Astro.props;
 ---
 
+  <div class="productos-bg">
 
-<main class="container producto-detalle">
-    <a href="/productos/almacen" class="btn-volver">← Volver a productos</a>
+  <main class="container producto-detalle">
+      <a href="/productos/almacen" class="btn-volver">← Volver a productos</a>
 
-    <div class="detalle-wrapper">
-      <div class="detalle-imagen">
-        <img src={producto.img} alt={producto.name} class="producto-img-grande" />
-      </div>
+      <div class="detalle-wrapper">
+        <div class="detalle-imagen">
+          <img src={LogoAlagro.src} alt={producto.name} class="producto-img-grande" />
+        </div>
 
-      <div class="detalle-info">
-        <h1 class="detalle-titulo">{producto.name}</h1>
-        
-        <p class="detalle-descripcion">{producto.longDesc}</p>
+        <div class="detalle-info">
+          <h1 class="detalle-titulo">{producto.name}</h1>
+          
+          <p class="detalle-descripcion">{producto.longDesc}</p>
 
 
-        <div class="detalle-meta">
-          <p><strong>Marca:</strong> Almacén agropecuario</p>
-          <p><strong>Descripción:</strong> {producto.desc}</p>
+          <div class="detalle-meta">
+            <p><strong>Marca:</strong> Almacén agropecuario</p>
+            <p><strong>Descripción:</strong> {producto.desc}</p>
 
+          </div>
         </div>
       </div>
-    </div>
 
-    <section class="productos-relacionados">
-      <h2>Otros productos del Almacen</h2>
-      <div class="grid-relacionados">
-        {listaProductosAlmacen.map(prod => (
-          <a href={`/productos/almacen/${prod.id}`} class={`card-relacionado ${prod.id === producto.id ? 'activo' : ''}`}>
-            <img src={prod.img} alt={prod.name} />
-            <p>{prod.name}</p>
-          </a>
-        ))}
-      </div>
-    </section>
-</main>
+      <section class="productos-relacionados">
+        <h2>Otros productos del Almacen</h2>
+        <div class="grid-relacionados">
+          {listaProductosAlmacen.map(prod => (
+            <a href={`/productos/almacen/${prod.id}`} class={`card-relacionado ${prod.id === producto.id ? 'activo' : ''}`}>
+              <img src={LogoAlagro.src} alt={prod.name} />
+              <p>{prod.name}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+  </main>
+  </div>
