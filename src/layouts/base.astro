@@ -13,6 +13,25 @@ import '../styles/global.css';
   <link rel="icon" type="image/png" href="/logoEmpresa.png" />
   <title>Alagro</title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-843758Q2RH"></script>
+
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-843758Q2RH');
+    </script>
+
+    <script is:inline>
+        document.addEventListener('astro:page-load', () => {
+        gtag('config', 'G-843758Q2RH', {
+            page_path: window.location.pathname,
+        });
+        });
+    </script>
+
   <ViewTransitions />
 </head>
 
