@@ -7,16 +7,24 @@ import '../styles/global.css';
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
 
-  <link rel="icon" type="image/png" href="/logoEmpresa.png" />
-  <title>Alagro</title>
+    <link rel="icon" type="image/png" href="/logoEmpresa.png" />
+    <title>Alagro</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-843758Q2RH"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js"
+        data-cbid="3c03c430-40c6-44c4-92ef-9d77beb7206c"
+        type="text/javascript"
+        async>
+    </script>
 
-    <script is:inline>
+    <!-- Google Analytics controlado por Cookiebot -->
+    <script type="text/plain" data-cookieconsent="statistics"
+        async src="https://www.googletagmanager.com/gtag/js?id=G-843758Q2RH">
+    </script>
+
+    <script is:inline type="text/plain" data-cookieconsent="statistics">
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -24,11 +32,11 @@ import '../styles/global.css';
         gtag('config', 'G-843758Q2RH');
     </script>
 
-    <script is:inline>
+    <script is:inline type="text/plain" data-cookieconsent="statistics">
         document.addEventListener('astro:page-load', () => {
-        gtag('config', 'G-843758Q2RH', {
+            gtag('config', 'G-843758Q2RH', {
             page_path: window.location.pathname,
-        });
+            });
         });
     </script>
 
