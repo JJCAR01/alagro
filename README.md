@@ -1,46 +1,46 @@
-# Astro Starter Kit: Basics
+# Alagro
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Descripción del proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Proyecto web estático construido con Astro. La aplicación presenta una landing page con secciones de gestión, productos, informes, estatutos y otros contenidos institucionales, utilizando componentes organizados en `src/components` y contenido adicional en `public`.
 
-## 🚀 Project Structure
+## Tecnologías utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+- Astro
+- JavaScript moderno (ESM)
+- Swiper
+- HTML/CSS
+- Estructura modular de componentes
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Estructura del proyecto
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- `astro.config.mjs` - configuración principal de Astro.
+- `package.json` - dependencias y scripts.
+- `tsconfig.json` - configuración de TypeScript/JS para el proyecto.
+- `public/` - recursos estáticos como imágenes, documentos y fuentes.
+  - `archives/`
+  - `documents/` con años organizados.
+  - `fonts/` y `images/`
+- `src/` - código fuente de la aplicación.
+  - `assets/` - iconos y datos estáticos.
+  - `components/` - componentes reutilizables agrupados por funcionalidad.
+    - `footer/`, `header/`, `home/`, `menuHeader/`, `productos/`, `sidebar/`, `whatsapp/`, etc.
+  - `data/` - archivos de datos JavaScript para contenidos de gestión y productos.
+  - `layouts/` - plantillas de diseño de Astro.
+  - `pages/` - páginas del sitio web y rutas.
+    - Rutas principales como `index.astro`, `asociados.astro`, `estatutos.astro`, `pqrsf.astro`, etc.
+    - Subcarpetas para secciones como `gestion/`, `informes/`, `productos/`, `asociados/`.
+  - `styles/` - estilos globales.
 
-## 🧞 Commands
+## Scripts disponibles
 
-All commands are run from the root of the project, from a terminal:
+- `npm run dev` - inicia el servidor de desarrollo.
+- `npm run build` - genera la versión estática para producción.
+- `npm run preview` - vista previa del build local.
+- `npm run astro` - ejecuta comandos de Astro.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Notas
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- El proyecto usa `type: "module"` en `package.json`.
+- `swiper` se incluye como dependencia para controles de carrusel.
+- La estructura modular facilita el mantenimiento y la expansión de secciones.
